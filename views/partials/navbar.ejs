@@ -1,0 +1,41 @@
+<nav class="navbar">
+   <a href="/list" class="nav-brand">
+        <img src="/public/title.png" alt="Media Cloud Logo">
+    </a>
+    
+    <div class="nav-links">
+
+        <a href="/list" class="nav-item <%= (typeof page !== 'undefined' && page === 'list') ? 'active' : '' %>">
+            List
+        </a>
+
+
+        <a href="/create" class="nav-item <%= (typeof page !== 'undefined' && page === 'create') ? 'active' : '' %>">
+            Upload
+        </a>
+
+
+        <% if (typeof user !== 'undefined' && user) { %>
+            
+
+            <div class="user-menu">
+                <div class="user-avatar">
+                    <img src="<%= user.photo || 'https://ui-avatars.com/api/?background=random&name=' + user.name %>" alt="User">
+                </div>
+                
+                <div class="dropdown-content">
+                    <div class="user-info">Hi, <%= user.name %></div>
+                    <a href="/logout" class="dropdown-item" style="color: #ff4757;">
+                        Logout ➜
+                    </a>
+                </div>
+            </div>
+
+        <% } else { %>
+            <a href="/login" class="nav-item <%= (typeof page !== 'undefined' && page === 'login') ? 'active' : '' %>">
+                Login
+            </a>
+
+        <% } %>
+    </div>
+</nav>
