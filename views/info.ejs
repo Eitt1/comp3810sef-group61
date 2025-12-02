@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Info - Media Drive</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <%- include('partials/navbar', { page: '' }) %>
+    <div class="form-box" style="text-align: center; margin-top: 100px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">ℹ️</div>
+        <h2 style="color: #667eea; margin-bottom: 20px;">
+            <%= message %>
+        </h2>
+
+        <a href="/list" class="btn btn-primary btn-block" style="max-width: 200px; margin: 0 auto;">
+            🏠 Return Home
+        </a>
+    </div>
+</body>
+</html>
